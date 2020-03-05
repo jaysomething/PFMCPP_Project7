@@ -4,13 +4,14 @@
 #include "AttackDamage.h"
 
 DragonSlayer::DragonSlayer(const std::string& name_, int hp_, int armor_):
-name { name_ },
-Character { hp_, armor_, attackDamageDragonSlayer }
+Character { hp_, armor_, attackDamageDragonSlayer },
+name { name_ }
 {
     std::cout << getName() << " gets some items: \n";
     helpfulItems = makeHelpfulItems(getRandomNumber());
     defensiveItems = makeDefensiveItems(getRandomNumber());
 }
+
 DragonSlayer::~DragonSlayer()
 {
     delete attackItem;

@@ -4,16 +4,16 @@
 #include "DefensiveItem.h"
 #include "Character.h"
 
-namespace MyRandom
-{
-    // Initialize our mersenne twister with a random seed based on the clock (once at system startup)
-    std::mt19937 mersenne{ static_cast<std::mt19937::result_type>(std::time(nullptr)) };
-}
+// Initialize our mersenne twister with a random seed based on the clock (once at system startup)
+static std::mt19937 mersenne
+{ 
+    static_cast<std::mt19937::result_type>(std::time(nullptr)) 
+};
 
 int getRandomNumber()
 {
-    std::uniform_int_distribution<> die{ rNum_min, rNum_max }; // we can create a distribution in any function that needs it
-    return die(MyRandom::mersenne); // and then generate a random number from our global generator
+    std::uniform_int_distribution<> die{ rNum_min-1, rNum_max-1 }; // we can create a distribution in any function that needs it
+    return die(mersenne); // and then generate a random number from our global generator
 }
 
 std::vector<std::unique_ptr<Item>> makeHelpfulItems(int num)

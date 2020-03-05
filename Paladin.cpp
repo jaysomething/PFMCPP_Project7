@@ -3,8 +3,8 @@
 #include "AttackDamage.h"
 
 Paladin::Paladin(const std::string& name_, int hp_, int armor_):
-name { name_ },
-Character { hp_, armor_, attackDamagePaladin }
+Character { hp_, armor_, attackDamagePaladin },
+name { name_ }
 {
     std::cout << getName() << " gets some items: \n";
     helpfulItems = makeHelpfulItems(getRandomNumber());
