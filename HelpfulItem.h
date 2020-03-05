@@ -7,9 +7,9 @@
 #include "DragonSlayer.h"
 #include "Dragon.h"
 
-struct HelpfulItem : Item
+struct HelpfulItem : public Item
 {
     HelpfulItem() : Item("helpful item", 2) { }
-    // void use(Character* character) override;
+    void use(Character* character) override;
 };
 
