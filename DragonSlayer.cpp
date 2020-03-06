@@ -12,10 +12,7 @@ name { name_ }
     defensiveItems = makeDefensiveItems(getRandomNumber());
 }
 
-DragonSlayer::~DragonSlayer()
-{
-    delete attackItem;
-}
+DragonSlayer::~DragonSlayer() {}
 
 const std::string& DragonSlayer::getName() { return name; }
 
@@ -28,16 +25,18 @@ void DragonSlayer::attack(Character& other)
         //DragonSlayers get a 10x boost when attacking dragons, from their attack item.
         //so they should USE their attack item before attacking the dragon... 
         //
-        useAttackItem(this, attackItem);
+        attackItem->use(this);
+        attackItem.reset();
         
         while( dragon->getHP() > 0 )
         {
           dragon->takeDamage(attackDamage);
         }
     }
-        
-    Character::attack(other);
-        
+    else
+    {
+        Character::attack(other);
+    }
 }
 
 std::string DragonSlayer::getStats() { return getCharacterStats(this); }

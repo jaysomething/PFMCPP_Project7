@@ -2,7 +2,7 @@
 
 #include "Character.h"
 
-struct Dwarf : public Character
+struct Dwarf : Character
 {
     Dwarf(const std::string& name_, int hp_, int armor_);
     

@@ -1,10 +1,11 @@
 #pragma once
 
 #include "Item.h"
-#include "Character.h"
+
+struct Character;
 
 struct AttackItem : public Item
 {
-    AttackItem() : Item("attack item", 3) {}
+    AttackItem() : Item("attack item", 10) {}
     void use(Character* character) override;
 };

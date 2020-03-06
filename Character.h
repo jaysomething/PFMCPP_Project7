@@ -6,7 +6,6 @@
 #include <iostream>
 
 #include "Item.h"
-#include "AttackItem.h"
 
 struct Character
 {

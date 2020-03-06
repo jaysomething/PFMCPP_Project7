@@ -2,7 +2,7 @@
 
 #include "Character.h"
 
-struct Dragon : public Character
+struct Dragon : Character
 {
     Dragon(const std::string& name_, int hp_, int armor_);
     

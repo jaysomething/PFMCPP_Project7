@@ -1,8 +1,10 @@
 #pragma once
 
+#include <memory>
 #include "Character.h"
+#include "AttackItem.h"
 
-struct DragonSlayer : public Character
+struct DragonSlayer : Character
 {
     DragonSlayer(const std::string& name_, int hp_, int armor_);
     ~DragonSlayer() override;
@@ -12,5 +14,5 @@ struct DragonSlayer : public Character
     void attack(Character& other) override;
 private:
     const std::string name;
-    AttackItem* attackItem = new AttackItem;
+    std::unique_ptr<AttackItem> attackItem {new AttackItem()};
 };
