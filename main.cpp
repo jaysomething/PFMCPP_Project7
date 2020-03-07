@@ -57,7 +57,7 @@ it's very easy to mess this task up.
 //==========================================================
 int main()
 {
-                      //name, hit points, armor. 
+    // name, hit points, armor.
     Dwarf dwarf { "Maldin the Dwarf", 3, 1 };
     Paladin paladin { "Warrick the Paladin", 5, 2 };
     Dragon dragon { "Garry The Dragon", 200, 50 };
@@ -77,7 +77,7 @@ int main()
     
     dragon.attack( dragonSlayer ); //he dodges
     dragonSlayer.attack( dragon ); //dragon is slayed.
-    //the dragon slayer has no friends and kills everyone 
+    // the dragon slayer has no friends and kills everyone
     dragonSlayer.attack( paladin );
     dragonSlayer.attack( dwarf ); 
     
